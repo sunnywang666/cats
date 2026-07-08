@@ -1,29 +1,30 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Meow-moku 小猫五子棋
 
-# Run and deploy your AI Studio app
+A healing cat-themed Gomoku (five-in-a-row) game: play against a local-algorithm AI opponent, collect cat skins, climb ranks, earn treats.
 
-This contains everything you need to run your app locally.
+治愈系猫咪五子棋：本地算法 AI 对手、猫咪皮肤收集、排位等级与小鱼干经济、难度选择、对局记录。
 
-View your app in AI Studio: https://ai.studio/apps/drive/1PjQP1tYSM9DnBEcjZncawlCfN3jkrjed
+**▶ Live: https://sunnywang666.github.io/cats/**
+
+![home](docs/screenshots/home.png)
+
+## Highlights
+
+- AI opponent is a pure local algorithm — no API key, no network needed, three difficulty tiers (Sleepy Kitten / Greedy Tabby / Grandmaster) / AI 对手为纯本地算法，无需联网与 key，三档难度
+- Retention loop designed up front: rank ladder, daily treats, skin collection driven by a written game design document / 先写 GDD 再开发，排位、每日奖励、皮肤收集构成留存循环
+- Dynamic cat pieces change posture by board context (lonely / snuggling / crowded) / 棋子猫咪按局面切换姿态
+
+## Tech Stack
+
+React 19 · TypeScript · Vite
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+```
 
+No API key required. The `GEMINI_API_KEY` reference in `vite.config.ts` is an AI Studio template leftover — nothing in the code calls it (an early prototype used Gemini for the AI opponent; it was replaced by the local algorithm).
 
-1. Install dependencies:
-   `npm install`
-2. Run the app:
-   `npm run dev`
-
-> 注:无需配置任何 API key。游戏 AI 是纯本地算法,vite.config 里的 GEMINI_API_KEY 是 AI Studio 模板残留,代码中没有任何调用。
-
-### 实时预览功能
-
-运行 `npm run dev` 后：
-- 开发服务器会自动在浏览器中打开（通常是 http://localhost:3000）
-- **支持热模块替换（HMR）**：当你修改任何文件（HTML、TSX、CSS等）时，页面会自动刷新，无需手动刷新浏览器
-- 修改代码后，保存文件即可立即看到更新效果
-- 如果浏览器没有自动打开，请手动访问终端中显示的本地地址
+无需配置任何 API key。`vite.config.ts` 里的 `GEMINI_API_KEY` 是 AI Studio 模板残留，代码中没有任何调用（早期原型曾用 Gemini 做对手，后已替换为本地算法）。
